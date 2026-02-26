@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Event page for Tustain Carriers</title>
+        <meta name="description" content="Tustaincarriers are holding a yard sale, raising only for Katherine House Hospice. Come along and find some bargains!">
+        <link rel="stylesheet" href="styles.css" type="text/css">
+    </head>
+    <body>
+
+        <!-- LAYER 1: Intro screen -->
+        <div id="intro-overlay">
+            <div class="intro-content">
+                <img src="logo.png" alt="Tustain Carriers Logo" class="background">
+                <h2>Tustain Carriers</h2>
+                <p>Welcome — click below to enter</p>
+                <button id="enter-btn">Click Here</button>
+            </div>
+        </div>
+
+        <!-- LAYER 2: Video screen -->
+        <div id="video-overlay">
+            <video id="intro-video" preload="auto" playsinline>
+                <source src="intro.mp4" type="video/mp4">
+            </video>
+            <button id="skip-btn">Skip &rsaquo;</button>
+        </div>
+
+        <!-- LAYER 3: Main site -->
+        <div id="main-site">
+            <header>
+                <nav class="navbar">
+                    <ul>
+                        <li class="nav-item"><a href="#about">About</a></li>
+                        <li class="nav-item"><a href="#details">Details</a></li>
+                        <li class="nav-item"><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <img src="logo.png" alt="Tustain Carriers Logo" class="background">
+                <h1>Tustain Carriers Yard Sale</h1>
+            </header>
+        </div>
+
+    </body>
+    <script src="script.js" async defer></script>
+</html>
