@@ -340,10 +340,12 @@ p {
     .map-btn {
         width: 100%;
         text-align: center;
+        box-sizing: border-box;
     }
 
     .map-links {
         flex-direction: column;
+        width: 100%;
     }
 }
 
@@ -398,6 +400,7 @@ p {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .map-btn {
@@ -408,6 +411,7 @@ p {
     text-decoration: none;
     font-size: 0.95rem;
     font-weight: 500;
+    box-sizing: border-box;
     transition: background 0.2s, color 0.2s;
 }
 
