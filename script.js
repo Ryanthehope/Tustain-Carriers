@@ -39,3 +39,15 @@ if (sessionStorage.getItem('skipIntro')) {
         revealMainSite();
     });
 }
+
+// ── Scroll reveal for .text blocks ──
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.text').forEach(el => revealObserver.observe(el));

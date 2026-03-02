@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -7,14 +7,17 @@
         <title>Event page for Tustain Carriers</title>
         <meta name="description" content="Tustaincarriers are holding a yard sale, raising only for Katherine House Hospice. Come along and find some bargains!">
         <link rel="stylesheet" href="styles.css" type="text/css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
     </head>
     <body>
 
         <!-- LAYER 1: Intro screen -->
         <div id="intro-overlay">
             <div class="intro-content">
-                <img src="logo.png" alt="Tustain Carriers Logo" class="background">
-                <h2>Tustain Carriers</h2>
+                <img src="./Images/background.png" alt="Tustain Carriers Logo" class="background">
+                <h2 class="background-headline">Tustain Carriers</h2>
                 <p>Welcome — click below to enter</p>
                 <button id="enter-btn">Click Here</button>
             </div>
@@ -23,7 +26,7 @@
         <!-- LAYER 2: Video screen -->
         <div id="video-overlay">
             <video id="intro-video" preload="auto" playsinline>
-                <source src="intro.mp4" type="video/mp4">
+                <source src="./Images/test.mp4" type="video/mp4">
             </video>
             <button id="skip-btn">Skip &rsaquo;</button>
         </div>
@@ -32,16 +35,52 @@
         <div id="main-site">
             <header>
                 <nav class="navbar">
+                    <img src="./Images/logo.png" alt="Tustain Carriers Logo" class="logo">
+                    <h1>Tustain Carriers Yard Sale</h1>
                     <ul>
                         <li class="nav-item"><a href="#about">About</a></li>
                         <li class="nav-item"><a href="#details">Details</a></li>
-                        <li class="nav-item"><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
-                <img src="logo.png" alt="Tustain Carriers Logo" class="background">
-                <h1>Tustain Carriers Yard Sale</h1>
             </header>
         </div>
+        <h2>First Time Ever &ndash; One Day Only</h2>
+
+        <div class="content-row">
+            <img src="./Images/photo-1.jpg" alt="Tustain Carriers Yard Sale" class="content-image">
+            <p class="text">For the first time in our history, Tustain Carriers are opening the gates to our yard for a very special, one-day event. Over the past 12 months, we&rsquo;ve carried out house clearances across the region, uncovering an incredible mix of antiques, vintage treasures, and unique modern finds along the way. Usually, these pieces are sold quietly behind the scenes &ndash; but this time, we&rsquo;re bringing everything together and inviting you in.</p>
+        </div>
+
+        <div class="content-row content-row--reverse">
+            <img src="./Images/image-2.png" alt="Tustain Carriers Yard Sale" class="content-image">
+            <p class="text">From characterful furniture and decorative pieces to quirky curiosities and quality everyday items, there&rsquo;s something for collectors, interior lovers, resellers, and bargain hunters alike. Every item has a story &ndash; and once it&rsquo;s gone, it&rsquo;s gone.</p>
+        </div>
+
+        <div class="content-row">
+            <img src="./Images/image-3.png" alt="Tustain Carriers Yard Sale" class="content-image">
+            <p class="text">This is a genuine, one-off opportunity to explore the hidden side of Tustain Carriers and discover pieces you simply won&rsquo;t find anywhere else. One yard. One day. One chance. A real event not to be missed.</p>
+        </div>
+
+
+        <!-- Find us section -->
+        <section id="details">
+            <h2>Find Us</h2>
+            <div class="location-card text">
+                <address>
+                    The Front Yard<br>
+                    Home Farm Works, Clifton Rd<br>
+                    Deddington<br>
+                    OX15 0TP
+                </address>
+                <a href="https://w3w.co/misted.unzipped.thigh" target="_blank" rel="noopener" class="w3w-badge">
+                    <span class="w3w-slashes">///</span>misted.unzipped.thigh
+                </a>
+                <div class="map-links">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Home+Farm+Works+Clifton+Rd+Deddington+OX15+0TP" target="_blank" rel="noopener" class="map-btn">Open in Google Maps</a>
+                    <a href="https://maps.apple.com/?q=Home+Farm+Works+Clifton+Rd+Deddington+OX15+0TP" target="_blank" rel="noopener" class="map-btn">Open in Apple Maps</a>
+                </div>
+            </div>
+        </section>
 
     </body>
     <script src="script.js" async defer></script>
