@@ -43,23 +43,7 @@ if (sessionStorage.getItem('skipIntro')) {
     });
 }
 
-// ── Smart map button ──
-const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-const isAndroid = /Android/.test(navigator.userAgent);
-const btnGoogle = document.getElementById('map-btn-google');
-const btnApple  = document.getElementById('map-btn-apple');
 
-if (isIOS) {
-    // iOS — show Apple Maps only
-    btnGoogle.style.display = 'none';
-} else if (isAndroid) {
-    // Android — show Google Maps only, use geo: URI to open native app
-    btnApple.style.display = 'none';
-    btnGoogle.href = 'geo:51.9897,-1.3277?q=Home+Farm+Works+Clifton+Rd+Deddington+OX15+0TP';
-} else {
-    // Desktop — show both
-    btnApple.href = 'https://maps.apple.com/?q=Home+Farm+Works+Clifton+Rd+Deddington+OX15+0TP';
-}
 
 const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
