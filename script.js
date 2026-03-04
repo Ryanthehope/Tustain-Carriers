@@ -55,3 +55,117 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 
 document.querySelectorAll('.text').forEach(el => revealObserver.observe(el));
+
+// ── Smooth scroll to top on Home button click ──
+const homeBtn = document.getElementById('home-btn');
+if (homeBtn) {
+    homeBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
+// ── Carousel ──
+const carouselTrack = document.querySelector('.carousel-track');
+const carouselSlides = document.querySelectorAll('.carousel-slide');
+const prevBtn = document.getElementById('carousel-prev');
+const nextBtn = document.getElementById('carousel-next');
+const dotsContainer = document.getElementById('carousel-dots');
+
+let currentIndex = 0;
+const totalSlides = carouselSlides.length;
+let autoplayInterval;
+
+// Create dots
+carouselSlides.forEach((_, index) => {
+    const dot = document.createElement('button');
+    dot.classList.add('carousel-dot');
+    dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
+    if (index === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => goToSlide(index));
+    dotsContainer.appendChild(dot);
+});
+
+const dots = document.querySelectorAll('.carousel-dot');
+
+function updateCarousel() {
+    carouselTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+    
+    // Update dots
+    dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentIndex);
+    });
+}
+
+function goToSlide(index) {
+    currentIndex = index;
+    updateCarousel();
+    resetAutoplay();
+}
+
+function nextSlide() {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    updateCarousel();
+}
+
+function prevSlide() {
+    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    updateCarousel();
+}
+
+function startAutoplay() {
+    autoplayInterval = setInterval(nextSlide, 4000); // Change slide every 4 seconds
+}
+
+function resetAutoplay() {
+    clearInterval(autoplayInterval);
+    startAutoplay();
+}
+
+// Event listeners
+prevBtn.addEventListener('click', () => {
+    prevSlide();
+    resetAutoplay();
+});
+
+nextBtn.addEventListener('click', () => {
+    nextSlide();
+    resetAutoplay();
+});
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') {
+        prevSlide();
+        resetAutoplay();
+    } else if (e.key === 'ArrowRight') {
+        nextSlide();
+        resetAutoplay();
+    }
+});
+
+// Touch/swipe support
+let touchStartX = 0;
+let touchEndX = 0;
+
+carouselTrack.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+});
+
+carouselTrack.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+});
+
+function handleSwipe() {
+    if (touchStartX - touchEndX > 50) {
+        nextSlide();
+        resetAutoplay();
+    } else if (touchEndX - touchStartX > 50) {
+        prevSlide();
+        resetAutoplay();
+    }
+}
+
+// Start autoplay
+startAutoplay();

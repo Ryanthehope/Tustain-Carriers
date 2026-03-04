@@ -37,17 +37,13 @@
                 <nav class="navbar">
                     <img src="./Images/logo.png" alt="Tustain Carriers Logo" class="logo">
                     <h1>The Tustain Carriers Yard Sale</h1>
-                    <ul>
-                        <li class="nav-item"><a href="#about">About</a></li>
-                        <li class="nav-item"><a href="#details">Details</a></li>
-                    </ul>
                 </nav>
             </header>
         </div>
         <h2>First Time Ever &ndash; One Day Only</h2>
 
         <div class="content-row">
-            <img src="./Images/photo-1.jpg" alt="Tustain Carriers Yard Sale" class="content-image">
+            <img src="./Images/image-1.jpg" alt="Tustain Carriers Yard Sale" class="content-image">
             <p class="text">For the first time in our history, Tustain Carriers are opening the gates to our yard for a very special, one-day event. Over the past 12 months, we&rsquo;ve carried out house clearances across the region, uncovering an incredible mix of antiques, vintage treasures, and unique modern finds along the way. Usually, these pieces are sold quietly behind the scenes &ndash; but this time, we&rsquo;re bringing everything together and inviting you in.</p>
         </div>
 
@@ -61,7 +57,29 @@
             <p class="text">This is a genuine, one-off opportunity to explore the hidden side of Tustain Carriers and discover pieces you simply won&rsquo;t find anywhere else. One yard. One day. One chance. A real event not to be missed.</p>
         </div>
 
-
+        <hr>
+        <!-- Carousel section -->
+        <section id="carousel-section">
+            <h2>What&rsquo;s On Offer</h2>
+            <div class="carousel-container">
+                <button class="carousel-btn carousel-btn--prev" id="carousel-prev" aria-label="Previous image">&lsaquo;</button>
+                <div class="carousel">
+                    <div class="carousel-track">
+                        <div class="carousel-slide"><img src="./Images/image-5.jpg" alt="Item for sale"></div>
+                        <div class="carousel-slide"><img src="./Images/image-6.jpg" alt="Item for sale"></div>
+                        <div class="carousel-slide"><img src="./Images/image-7.jpg" alt="Item for sale"></div>
+                        <div class="carousel-slide"><img src="./Images/image-8.jpg" alt="Item for sale"></div>
+                        <div class="carousel-slide"><img src="./Images/image-9.jpg" alt="Item for sale"></div>
+                        <div class="carousel-slide"><img src="./Images/image-10.jpg" alt="Item for sale"></div>
+                        <div class="carousel-slide"><img src="./Images/image-11.jpg" alt="Item for sale"></div>
+                        <div class="carousel-slide"><img src="./Images/image-12.jpg" alt="Item for sale"></div>
+                    </div>
+                </div>
+                <button class="carousel-btn carousel-btn--next" id="carousel-next" aria-label="Next image">&rsaquo;</button>
+            </div>
+            <div class="carousel-dots" id="carousel-dots"></div>
+        </section>
+        <hr>
         <!-- Find us section -->
         <section id="details">
             <h2>Find Us</h2>
@@ -82,7 +100,19 @@
                 </div>
             </div>
         </section>
-
-    </body>
+        <div class="footer">
     <script src="script.js" async defer></script>
+     <footer>
+        <div class="footer-content">
+            <div class="footer-copyright">
+                <span id="copyright">&copy; Head-start Web Development. All rights reserved.</span>
+            </div>
+            <nav class="footer-nav">
+                <ul class="footer-nav-links">
+                    <li class="footer-nav-item"><a class="footer-nav-link" href="#top" id="home-btn">Home</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
 </html>
