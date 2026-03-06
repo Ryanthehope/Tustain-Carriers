@@ -5,6 +5,9 @@ const introVideo   = document.getElementById('intro-video');
 const enterBtn     = document.getElementById('enter-btn');
 const skipBtn      = document.getElementById('skip-btn');
 
+// Keep intro video silent on all devices/browsers.
+introVideo.muted = true;
+
 function revealMainSite() {
     videoOverlay.classList.remove('visible');
     videoOverlay.classList.add('hidden');
