@@ -7,8 +7,16 @@ const skipBtn      = document.getElementById('skip-btn');
 
 // Keep intro video silent on all devices/browsers.
 introVideo.muted = true;
+introVideo.playsInline = true;
+introVideo.setAttribute('playsinline', '');
+introVideo.setAttribute('webkit-playsinline', '');
+
+let hasRevealedMainSite = false;
 
 function revealMainSite() {
+    if (hasRevealedMainSite) return;
+    hasRevealedMainSite = true;
+
     videoOverlay.classList.remove('visible');
     videoOverlay.classList.add('hidden');
     mainSite.classList.add('visible');
@@ -26,8 +34,9 @@ if (sessionStorage.getItem('skipIntro')) {
     enterBtn.addEventListener('click', () => {
         // Show video overlay and start playing straight away (hidden behind intro)
         videoOverlay.classList.add('visible');
+        introVideo.currentTime = 0;
         introVideo.play().catch(() => {
-            // Autoplay blocked — mute and retry (user can unmute)
+            // Retry once muted if an Android browser blocks first attempt.
             introVideo.muted = true;
             introVideo.play();
         });
@@ -38,6 +47,16 @@ if (sessionStorage.getItem('skipIntro')) {
 
     // Video ends naturally
     introVideo.addEventListener('ended', revealMainSite);
+
+    // Some Android browsers occasionally miss the ended event; fall back near the end.
+    introVideo.addEventListener('timeupdate', () => {
+        if (introVideo.duration && introVideo.currentTime >= introVideo.duration - 0.2) {
+            revealMainSite();
+        }
+    });
+
+    // If playback fails for any reason, continue into the site.
+    introVideo.addEventListener('error', revealMainSite);
 
     // Skip button
     skipBtn.addEventListener('click', () => {
