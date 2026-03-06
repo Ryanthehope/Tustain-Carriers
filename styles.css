@@ -8,6 +8,12 @@
     --text-color: #B8DB80;
 }
 
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     background-color: var(--background-color);
     margin: 0;
@@ -142,6 +148,7 @@ body {
 
 header {
     width: 100%;
+    background-color: var(--secondary-color);
 }
 
 .navbar ul {
@@ -577,7 +584,8 @@ hr {
 }
 
 footer {
-    
+    background-color: var(--secondary-color);
+    color: #fff;
     margin: 2rem -20px -20px -20px;
     padding: 1.5rem 2rem;
     border-top: 1px solid rgba(0,0,0,0.15);
@@ -593,7 +601,7 @@ footer {
 
 .footer-copyright {
     font-size: 0.85rem;
-    color: var(--text-color);
+    color: #fff;
 }
 
 .footer-nav-links {
@@ -606,11 +614,11 @@ footer {
 
 .footer-nav-link {
     text-decoration: none;
-    color: var(--text-color);
+    color: #fff;
     font-size: 0.9rem;
     transition: color 0.3s ease;
 }
 
 .footer-nav-link:hover {
-    color: var(--color-dark);
+    color: rgba(255,255,255,0.85);
 }
