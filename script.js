@@ -136,7 +136,7 @@ function prevSlide() {
 }
 
 function startAutoplay() {
-    autoplayInterval = setInterval(nextSlide, 4000); // Change slide every 4 seconds
+    autoplayInterval = setInterval(nextSlide, 3000); // Change slide every 3 seconds
 }
 
 function resetAutoplay() {
