@@ -203,7 +203,7 @@ h1 {
     color: white;
 }
 
-h2, h3{
+h2, h3, h4{
     max-width: 900px;
     margin: 2rem auto 0;
     font-family: 'Fredoka One', sans-serif;

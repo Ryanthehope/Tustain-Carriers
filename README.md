@@ -63,6 +63,60 @@ Create a `vercel.json` file in the root directory:
 }
 ```
 
+### Amazon S3
+
+For S3 static website hosting, you'll need to configure two buckets:
+
+#### Main Bucket (tc-yardsale.co.uk)
+
+1. **Enable Static Website Hosting**:
+   - Go to bucket Properties → Static website hosting
+   - Enable static website hosting
+   - Index document: `index.html`
+   - Error document: `404.html`
+
+2. **Apply Bucket Policy**:
+   - Go to bucket Permissions → Bucket policy
+   - Paste this policy (replace `tc-yardsale.co.uk` if needed):
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "PublicReadGetObject",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::tc-yardsale.co.uk/*"
+    }
+  ]
+}
+```
+
+3. **Disable Block Public Access**:
+   - Go to Permissions → Block public access
+   - Uncheck "Block all public access"
+   - Confirm the changes
+
+#### Redirect Bucket (www.tc-yardsale.co.uk)
+
+1. **Enable Static Website Hosting**:
+   - Go to bucket Properties → Static website hosting
+   - Select "Redirect requests for an object"
+   - Host name: `tc-yardsale.co.uk`
+   - Protocol: `http` or `https` (depending on your setup)
+
+2. **No bucket policy needed** for the redirect bucket
+
+#### DNS Configuration
+
+Point your domain DNS records to S3:
+- **A record** (or ALIAS): `tc-yardsale.co.uk` → S3 website endpoint
+- **CNAME**: `www.tc-yardsale.co.uk` → `www.tc-yardsale.co.uk.s3-website-[region].amazonaws.com`
+
+Or use CloudFront for HTTPS support.
+
 ### Local Testing
 
 To test the 404 page locally, simply open `404.html` directly in your browser. The "Return Home" button should navigate back to `index.html`.
