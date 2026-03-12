@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>404 - Page Not Found | Tustain Carriers</title>
+    <meta name="description" content="The page you're looking for cannot be found. Return to the Tustain Carriers homepage.">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <style>
+        /* 404-specific styles */
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            text-align: center;
+            background-color: var(--background-color);
+        }
+
+        .error-logo {
+            width: 200px;
+            height: auto;
+            margin-bottom: 2rem;
+            filter: drop-shadow(0 4px 12px rgba(0,0,0,0.2));
+        }
+
+        .error-code {
+            font-family: 'Fredoka One', sans-serif;
+            font-size: 8rem;
+            margin: 0;
+            color: white;
+            text-shadow:
+                3px 3px 0 #b0478a,
+                6px 6px 0 rgba(0,0,0,0.25),
+                0 8px 30px rgba(0,0,0,0.3);
+            letter-spacing: 0.5px;
+            line-height: 1;
+        }
+
+        .error-title {
+            font-family: 'Fredoka One', sans-serif;
+            font-size: 2.5rem;
+            margin: 1rem 0;
+            color: var(--text-color);
+            text-shadow:
+                2px 2px 0 #b0478a,
+                4px 4px 0 rgba(0,0,0,0.22),
+                0 5px 16px rgba(0,0,0,0.28);
+            letter-spacing: 0.5px;
+        }
+
+        .error-message {
+            font-family: 'Fredoka One', sans-serif;
+            font-size: 1.2rem;
+            color: #333;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1.5rem 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+            max-width: 600px;
+            margin: 2rem auto;
+            line-height: 1.6;
+        }
+
+        .home-btn {
+            padding: 1rem 2.5rem;
+            font-size: 1.2rem;
+            font-family: 'Fredoka One', sans-serif;
+            background: var(--background-color);
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .home-btn:hover {
+            background: #d45a93;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .home-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 5rem;
+            }
+
+            .error-title {
+                font-size: 1.8rem;
+            }
+
+            .error-message {
+                font-size: 1rem;
+                padding: 1.25rem 1.5rem;
+            }
+
+            .error-logo {
+                width: 150px;
+            }
+
+            .home-btn {
+                font-size: 1rem;
+                padding: 0.875rem 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .error-code {
+                font-size: 4rem;
+            }
+
+            .error-title {
+                font-size: 1.5rem;
+            }
+
+            .error-logo {
+                width: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-page">
+        <img src="./Images/logo.png" alt="Tustain Carriers Logo" class="error-logo">
+        <h1 class="error-code">404</h1>
+        <h2 class="error-title">Oops! Page Not Found</h2>
+        <p class="error-message">
+            We couldn't find the page you're looking for. It may have been moved, deleted, or perhaps the URL was mistyped. Don't worry though — you can head back to our homepage to find what you need!
+        </p>
+        <a href="index.html" class="home-btn">Return Home</a>
+    </div>
+</body>
+</html>
